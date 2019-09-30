@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyExchangeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="81e-Y3-sRV">
+                                <rect key="frame" x="20" y="50" width="335" height="477.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Exchange Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcQ-fw-zxP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                        <color key="textColor" red="0.5" green="0.10891431566323911" blue="0.10981029448823343" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Xy-U7K">
+                                        <rect key="frame" x="0.0" y="61.5" width="335" height="70"/>
+                                        <color key="tintColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="OwU-e8-Ckh"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="589400488.61823905">
+                                            <!--2019-09-05 18:21:28 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1162206000">
+                                            <!--2037-10-30 11:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="chooseDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="DPd-LB-G3y"/>
+                                        </connections>
+                                    </datePicker>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-0p-EbW">
+                                        <rect key="frame" x="0.0" y="161.5" width="335" height="20"/>
+                                    </activityIndicatorView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cx2-xF-bzX">
+                                        <rect key="frame" x="0.0" y="211.5" width="335" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU0-Zz-hqg">
+                                                <rect key="frame" x="0.0" y="22.5" width="72.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <color key="textColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="highlightedColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgC-Ae-7Qf">
+                                                <rect key="frame" x="87.5" y="0.0" width="72.5" height="70"/>
+                                                <color key="tintColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sxk-pn-wbb"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZVo-h5-gBt"/>
+                                                </connections>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgW-tV-q1h">
+                                                <rect key="frame" x="175" y="23" width="72.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiJ-0J-ayd">
+                                                <rect key="frame" x="262.5" y="0.0" width="72.5" height="70"/>
+                                                <color key="tintColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KAL-CS-FEK"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fiB-B1-bCH"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="eKG-pH-o5M"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 unit value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlU-HI-614">
+                                        <rect key="frame" x="0.0" y="311.5" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.92131114339999998" green="1" blue="0.73822437169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sWE-c1-jxo"/>
+                                            <constraint firstAttribute="width" constant="335" id="svu-HP-Cto"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nga-46-ekw">
+                                        <rect key="frame" x="0.0" y="381.5" width="335" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calculate amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6x-vE-4Yn">
+                                                <rect key="frame" x="0.0" y="0.0" width="148.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6e5-gS-P29">
+                                                <rect key="frame" x="158.5" y="0.0" width="176.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-HF-grB">
+                                        <rect key="frame" x="0.0" y="441.5" width="335" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-8f-Jkg">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="36"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="hBl-nK-mAP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Calculate">
+                                                    <color key="titleColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="CalculateAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UXM-Fy-4OG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-fC-ly0">
+                                                <rect key="frame" x="182.5" y="0.0" width="152.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Refresh">
+                                                    <color key="titleColor" red="0.5" green="0.1089143157" blue="0.1098102945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jFD-hf-fAT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GoC-Xy-U7K" firstAttribute="leading" secondItem="81e-Y3-sRV" secondAttribute="leading" id="LJl-jw-2ut"/>
+                                    <constraint firstAttribute="trailing" secondItem="GoC-Xy-U7K" secondAttribute="trailing" id="P9S-fI-BuW"/>
+                                    <constraint firstAttribute="trailing" secondItem="SlU-HI-614" secondAttribute="trailing" id="azt-Hm-XV3"/>
+                                    <constraint firstItem="SlU-HI-614" firstAttribute="leading" secondItem="81e-Y3-sRV" secondAttribute="leading" id="p7B-pw-UnG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.6350539946" green="0.69327014590000002" blue="0.60925659340000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="81e-Y3-sRV" secondAttribute="trailing" constant="20" id="G1j-D5-k97"/>
+                            <constraint firstItem="81e-Y3-sRV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Sul-n1-nps"/>
+                            <constraint firstItem="81e-Y3-sRV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="e8G-QH-38b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8c0-BO-FgV" appends="YES" id="ubl-nw-9gC"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="6e5-gS-P29" id="C6b-gQ-YwP"/>
+                        <outlet property="busyInd" destination="ofN-0p-EbW" id="kQZ-0N-71c"/>
+                        <outlet property="dateData" destination="GoC-Xy-U7K" id="7yt-wX-FOa"/>
+                        <outlet property="fromPicker" destination="SgC-Ae-7Qf" id="bae-kM-kmh"/>
+                        <outlet property="resultLabel" destination="SlU-HI-614" id="ynF-DK-Thv"/>
+                        <outlet property="toPicker" destination="GiJ-0J-ayd" id="nD4-4o-qAh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8c0-BO-FgV">
+                    <connections>
+                        <action selector="tagview:" destination="BYZ-38-t0r" id="Pjp-jy-MhO"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
